@@ -3,7 +3,7 @@
 JVMLevel=
 LSID=urn\:lsid\:8080.gpserver.ip-172-31-26-71.ip-172-31-26-71.ec2.internal\:genepatternmodules\:706\:1
 author=
-commandLine=python /build/tfsites-webportal/08-compareSeqs/08-compareSeqs.py -n <tf.names> -i <tf.IUPACs> -p <tf.normalized.PBM.files> -a <first.DNA.sequence> -b   <second.DNA.sequence> -c <first.sequence.name> -d <second.sequence.name> -o <output.filename>         
+commandLine=python /build/tfsites-webportal/08-compareSeqs/08-compareSeqs.py -n <tf.names> -i <tf.IUPACs> -P <tf.normalized.PBM.files> -a <first.DNA.sequence> -b   <second.DNA.sequence> -c <first.sequence.name> -d <second.sequence.name> -o <output.filename>         
 cpuType=any
 description=Compares the two seqs and reports the binding site effect on diff seqs
 documentationUrl=https://genepattern.github.io/tfsites.CompareEnhancers/v1/
