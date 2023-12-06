@@ -1,4 +1,4 @@
-# tfsites.DefineTfSites v1
+# tfsites.CompareEnhancers v1
 
 **Author(s):** Joe Solvason  
 
@@ -8,18 +8,18 @@
 
 **Task Type:** Transciption factor analysis
 
-**LSID:**  urn:lsid:genepattern.org:module.analysis:00441
+**LSID:**  urn:lsid:genepattern.org:module.analysis:00448
 
 
 ## Introduction
 
-tfsites.DefineTfSites normalizes PBM data.
+tfsites.CompareEnhancers compares the two seqs and reports the binding site effect on diff seqs
 
 
 ## Functionality
 
 TBD
-
+ 
 ## Methodology
 
 TBD
@@ -28,28 +28,28 @@ TBD
 
 <span style="color: red;">*</span> indicates required parameter
 
-- **input data**<span style="color: red;">*</span>
-    - This is a [ state what the format and content is supposed to be] file containing raw PBM data in tsv format.
-- **IUPAC**<span style="color: red;">*</span>
-    - IUPAC DNA definition of the transcription factor site 
-- **out filename**<span style="color: red;">*</span>
-    - Out file name for the annotated PBM data
-- **forward column**
-    - (1-indexed) Column of the forward DNA sequence in the pbm file.
-- **mfi column**
-    - (1-indexed) Column of the MFI in the pbm file.
-- **header seq**
-    - (True/False) s there a header sequence in the raw PBM file?
-- **IUPAC 8mers only**
-    - (True/False) Only report 8mers abiding by IUPAC in the output
-- **min normalize**
-    - (True/False) Normalize with min affinity set to 0.001
+- **tf names**<span style="color: red;">*</span>
+    - List of transcription factor names (comma separated).
+- **tf IUPACs**<span style="color: red;">*</span>
+    - List of transcription factor IUPACs (comma separated). 
+- **tf normalized PBM files**<span style="color: red;">*</span>
+    - TF normalized PBM files
+- **first DNA sequence**
+    - First DNA sequence
+- **second DNA sequence**
+    - Second DNA sequence.
+- **first.sequence.name**
+    - Name of the first DNA sequence.
+- **second sequence name**
+    - Name of the second DNA sequence.
+- **output filename**
+    - Output file name
 
 
 
 ## Input Files
 
-1.  input data.  Raw PBM data in tsv format [ define format and contents in detail ] 
+1.  tf normalized PBM files.  Raw PBM data in tsv format [ define format and contents in detail ] 
     
 
 
@@ -63,11 +63,14 @@ TBD Describe how to get common data formats into the format needed here
     e.g. 
 ```
 seq     rel_aff
-AAAAAAAA        0.147
-AAAAAAAC        0.107
-AAAAAAAG        0.13
-AAAAAAAT        0.125
-AAAAAACA        0.123
+
+align-pos-1idx	site-direction	specificity	seq-chick	seq-human	aff-chick	aff-human	tf-name
+231	-	chick	TTATCCTC		0.266		ets
+238	-	human		TCATCCAT		0.06	ets
+97	+	shared	ATGGAAAA	TTGGAAAA	0.071	0.056	ets
+188	-	shared	ACTTCCAT	ACTTCCAT	0.059	0.059	ets
+51	-	shared	CTTTCCAA	CTTTCCAA	0.05	0.05	ets
+230	-	chick	TTTATCCT		0.138		gata
 
 ```
     
@@ -78,8 +81,7 @@ AAAAAACA        0.123
     
 ## References
 
-Cancer Genome Atlas Network. Comprehensive genomic characterization of head and neck squamous cell carcinomas. Nature. 2015 Jan 29;517(7536):576-82. doi: 10.1038/nature14129. PMID: 25631445; PMCID: PMC4311405.
     
 ## Version Comments
 
-- **1.0.0** (2023-01-12): Initial draft of document scaffold.
+- **1.0.0** (2023-12-06): Initial draft of document scaffold.
