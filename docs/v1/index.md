@@ -24,7 +24,7 @@ The specificity of each binding site depends on whether it exists in one sequenc
 
 ## Parameters
 
-<span style="color: red;">*</span> indicates required parameter\
+<span style="color: red;">*</span> indicates required parameter
 
 ### Input and Outputs
 
@@ -57,7 +57,23 @@ The specificity of each binding site depends on whether it exists in one sequenc
         - `Seq:` the sequence of every possible k-mer
         - `Rel_aff:` the relative affinity of the k-mer normalized to the max IUPAC k-mer
 
-   <img src="./01-normoutput.png"/>
+```
+seq             rel_aff
+AAAAAAAA        0.147
+AAAAAAAC        0.107
+AAAAAAAG        0.13
+AAAAAAAT        0.125
+AAAAAACA        0.123
+```
+
+```
+seq             rel_aff
+AAAAAAAA        0.085
+TTTTTTTT        0.085
+AAAAAAAC        0.061
+GTTTTTTT        0.061
+AAAAAAAG        0.057
+```
        
 ## Output Files
 
@@ -74,20 +90,20 @@ The specificity of each binding site depends on whether it exists in one sequenc
 
 ```
 
-align-pos-1idx	site-direction	specificity	seq-chick	seq-human	aff-chick	aff-human	tf-name
-231 -	chick	TTATCCTC		0.266		ets
-238 -	human		TCATCCAT		0.06	ets
-97 +	shared	ATGGAAAA	TTGGAAAA	0.071	0.056	ets
-188 -	shared	ACTTCCAT	ACTTCCAT	0.059	0.059	ets
-51 -	shared	CTTTCCAA	CTTTCCAA	0.05	0.05	ets
-230 -	chick	TTTATCCT		0.138		gata
+align-pos-1idx	 site-direction	  specificity	  seq-chick	seq-human	aff-chick	aff-human	tf-name
+231              -	          chick	          TTATCCTC		        0.266		                 ets
+238              -	          human		                TCATCCAT		        0.06	         ets
+97               +	          shared          ATGGAAAA      TTGGAAAA	0.071	        0.056	         ets
+188              -	          shared          ACTTCCAT      ACTTCCAT	0.059	        0.059	         ets
+51               -	          shared          CTTTCCAA      CTTTCCAA	0.05	        0.05	         ets
+230              -	          chick	          TTTATCCT		                        0.138            gata
 
 ```
     
   
 ## Example Data
 
-[Example input data is available on github](https://github.com/genepattern/tfsites.defineTfSites/data)
+[Example input data is available on github](https://github.com/genepattern/tfsites.CompareEnhancers/data)
     
 ## References
 
@@ -95,3 +111,4 @@ align-pos-1idx	site-direction	specificity	seq-chick	seq-human	aff-chick	aff-huma
 ## Version Comments
 
 - **1.0.0** (2023-12-06): Initial draft of document scaffold.
+- **1.0.1** (2024-02-02): Draft completed.
